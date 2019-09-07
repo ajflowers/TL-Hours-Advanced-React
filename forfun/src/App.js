@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import Players from './components/Players'
 
 class App extends React.Component {
   state = {
@@ -8,7 +9,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getData()
+    this.getData()    
+  }
+
+  componentDidUpdate() {
     console.log(this.state.data)
   }
 
@@ -23,9 +27,7 @@ class App extends React.Component {
     console.log(this.state.data)
     return (
       <div className="App">
-        <header className="App-header">
-       
-        </header>
+        <Players players={this.state.data} />
       </div>
     );
   }
